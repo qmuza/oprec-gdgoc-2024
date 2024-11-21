@@ -9,8 +9,8 @@ const BookList = () => {
 
     const [allBookDetails, setAllBookDetails] = useState([{
         "id": 0,
-        "title": '',
-        "author": '',
+        "title": 'Loading books...',
+        "author": 'Please wait',
         "published_at": '',
         "created_at": '',
         "updated_at": ''
