@@ -45,30 +45,43 @@ const DetailPanel = ({ book_id }) => {
             </a>
             </div>
             
-            <div className="flex flex-row border-solid border-2 border-[#333741] m-6 mt-14 p-6 rounded-xl bg-white text-[#636771]">
-                <div className="flex-flex-col space-y-6 w-[30%]">
-                    <span className="block self-center font-bold mb-1">Title</span>
-                    <span className="block self-center font-bold mb-1">Author</span>
-                    <span className="block self-center font-bold mb-1">Published at</span>
-                    <span className="block self-center font-bold mb-1">Created at</span>
-                    <span className="block self-center font-bold mb-1">Updated at</span>
+            <div className="flex flex-col border-solid border-2 border-[#333741] m-6 mt-14 p-6 rounded-xl bg-white text-[#636771] text-sm md:text-base">
+                <div className="flex flex-row font-bold mb-5">
+                    <span className="block w-[38%] md:w-[28%] shrink-0">Title</span>
+                    <span className="block w-[4%]">: </span>
+                    <span className="block w-[58%] md:w-[68%]">{bookDetails.title}</span>
                 </div>
-                <div className="flex-flex-col space-y-6 w-[70%]     ">
-                    <span className="block self-center font-bold mb-1">: {bookDetails.title}</span>
-                    <span className="block self-center font-bold mb-1">: {bookDetails.author}</span>
-                    <span className="block self-center font-bold mb-1">: {bookDetails.published_at}</span>
-                    <span className="block self-center font-bold mb-1">: {bookDetails.created_at}</span>
-                    <span className="block self-center font-bold mb-1">: {bookDetails.updated_at}</span>
+                <div className="flex flex-row font-bold mb-5">
+                    <span className="block w-[38%] md:w-[28%]">Author</span>
+                    <span className="block w-[4%]">: </span>
+                    <span className="block w-[58%] md:w-[68%]">{bookDetails.author}</span>
+                </div>
+                <div className="flex flex-row font-bold mb-5">
+                    <span className="block w-[38%] md:w-[28%]">Published at</span>
+                    <span className="block w-[4%]">: </span>
+                    <span className="block w-[58%] md:w-[68%]">{bookDetails.published_at}</span>
+                </div>
+                <div className="flex flex-row font-bold mb-5">
+                    <span className="block w-[38%] md:w-[28%]">Created at</span>
+                    <span className="block w-[4%]">: </span>
+                    <span className="block w-[58%] md:w-[68%]">{bookDetails.created_at}</span>
+                </div>
+                <div className="flex flex-row font-bold mb-1">
+                    <span className="block w-[38%] md:w-[28%]">Updated at</span>
+                    <span className="block w-[4%]">: </span>
+                    <span className="block w-[58%] md:w-[68%]">{bookDetails.updated_at}</span>
                 </div>
             </div>
             <div className="flex justify-between pb-6 px-6">
                     <button onClick={() => handleClick("update")}
-                    className="w-[48%] bg-[#333741] text-white py-2 rounded-lg font-semibold border-solid border-2 border-[#333741] hover:bg-white hover:text-[#333741]"
+                    className="w-[48%] bg-[#333741] text-white py-2 rounded-lg font-semibold border-solid border-2 border-[#333741] 
+                    transition ease-in-out hover:scale-105 hover:bg-white hover:text-[#333741]"
                     >
                     Update book
                     </button>
                     <button onClick={() => handleClick("delete")}
-                    className="w-[48%] bg-[#333741] text-white py-2 rounded-lg font-semibold border-solid border-2 border-[#333741] hover:bg-white hover:text-[#333741]"
+                    className="w-[48%] bg-[#333741] text-white py-2 rounded-lg font-semibold border-solid border-2 border-[#333741] 
+                    transition ease-in-out hover:scale-105 hover:bg-white hover:text-[#333741]"
                     >
                     Delete book
                     </button>

@@ -48,7 +48,8 @@ const FormDelete = ({ book_id }) => {
                     Yes
                     </button>
                     <button onClick={() => handleClick(false)}
-                    className="w-[47%] bg-[#333741] text-white py-2 rounded-lg font-semibold border-solid border-2 border-[#333741] hover:bg-white hover:text-[#333741]"
+                    className="w-[47%] bg-[#333741] text-white py-2 rounded-lg font-semibold border-solid border-2 border-[#333741] 
+                    transition ease-in-out hover:scale-105 hover:bg-white hover:text-[#333741]"
                     >
                     No
                     </button>

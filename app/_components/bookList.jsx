@@ -40,15 +40,16 @@ const BookList = () => {
                         Book List
                     </h2>
                 </div>
-                <div className={`flex flex-col m-6 mt-14 overflow-y-scroll max-h-[500px]`}>
+                <div className={`flex flex-col m-6 mt-14 overflow-y-scroll max-h-[400px] md:max-h-[500px]`}>
                     {allBookDetails.map((book, index) => (
                         <div key={book.id} className={`flex flex-row p-5 ${index % 2 ? "bg-[#ececec]" : "bg-white" } text-[#636771] text-lg`}>
-                            <div className="flex-flex-col space-y-1 w-[70%]     ">
+                            <div className="flex-flex-col space-y-1 w-[70%] pr-2 text-sm md:text-lg">
                                 <span className="block self-center font-bold mb-1">{book.title}</span>
                                 <span className="block self-center font-bold mb-1">{book.id ? "by" : ""} {book.author}</span>
                             </div>
                             <button onClick={() => handleClick(book.id)}
-                                className="w-[30%] bg-[#333741] text-white py-2 rounded-lg font-semibold border-solid border-2 border-[#333741] hover:bg-[#CAE9F5] hover:text-[#333741]"
+                                className="w-[30%] bg-[#333741] text-white py-2 rounded-lg font-semibold border-solid border-2 border-[#333741] 
+                                transition ease-in-out hover:scale-105 hover:bg-[#CAE9F5] hover:text-[#333741]"
                                 >
                                 View Details
                             </button>

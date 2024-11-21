@@ -83,7 +83,8 @@ const FormCreate = () => {
                 </div>
                 <button
                 type="submit"
-                className="w-full bg-[#333741] text-white py-2 rounded-lg font-semibold border-solid border-2 border-[#333741] hover:bg-white hover:text-[#333741]"
+                className="w-full bg-[#333741] text-white py-2 rounded-lg font-semibold border-solid border-2 border-[#333741] 
+                transition ease-in-out hover:bg-white hover:text-[#333741]"
                 >
                 Submit
                 </button>
