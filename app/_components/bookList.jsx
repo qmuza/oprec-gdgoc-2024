@@ -43,7 +43,7 @@ const BookList = () => {
                 <div className={`flex flex-col m-6 mt-14 overflow-y-scroll max-h-[400px] md:max-h-[500px]`}>
                     {allBookDetails.map((book, index) => (
                         <div key={book.id} className={`flex flex-row p-5 ${index % 2 ? "bg-[#ececec]" : "bg-white" } text-[#636771] text-lg`}>
-                            <div className="flex-flex-col space-y-1 w-[70%] pr-2 text-sm md:text-lg">
+                            <div className="flex-flex-col self-center space-y-1 w-[70%] pr-2 text-sm md:text-lg">
                                 <span className="block self-center font-bold mb-1">{book.title}</span>
                                 <span className="block self-center font-bold mb-1">{book.id ? "by" : ""} {book.author}</span>
                             </div>
