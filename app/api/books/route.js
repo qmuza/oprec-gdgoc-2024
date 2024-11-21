@@ -6,7 +6,7 @@ import { removeAutoGenFields } from '../controllers/cleanDBResult';
 await connectDB();
 
 export async function GET(req) {
-    const res = await Books.find({}).sort({ id: -1 });
+    const res = await Books.find({}).sort({ id: -1 }); //biar habis create keliatan di page nya
 
     let formatted = [];
     res.forEach((book) => {
