@@ -1,36 +1,144 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+This web app is available at [papyruspub.vercel.app](https://papyruspub.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This project is mainly directed to accomplish a REST API implementation as required in the GDGOC UGM hacker study case, Back-End role, but I have also included some Front-End stuffs to assist people who may not have tools like postman test the API directly on the web.
+ 
+## Endpoints
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- ### ```api/books```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. Method: ```GET```  
+  
+   Description: Read all items
+  
+   Request body: none
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   Response status:
+   - ```200``` on success
+  
+   Response body:
+   ```
+   {
+     "data": [
+       {
+         "id": n,
+         "title": "yourtitle",
+         "author": "yourauthor",
+         "published_at": "yourpublicationdate",
+         "created_at": "yourcreationdate",
+         "updated_at": "yourmodificationdate"
+       }
+     ]
+   }
+    ```  
+  
+2. Method: ```POST```
 
-## Learn More
+   Description: Create a new item
+   
+   Request body:
+   ```
+   {
+     "title": "yourtitle",
+     "author": "yourauthor",
+     "published_at": "yourpublicationdate"
+   }
+   ```
+   
+   Response status:
+   - ```200``` on success
+   - ```400``` if parameters missing or JSON invalid
+  
+   Response body:
+   ```
+   {
+     "message": "Book created successfully",
+     "data": {
+       "id": n,
+       "title": "yourtitle",
+       "author": "yourauthor",
+       "published_at": "yourpublicationdate",
+       "created_at": "yourcreationdate",
+       "updated_at": "yourmodificationdate"
+     }
+   }
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+   
+-   ###  ```api/books/[book_id]```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Method: ```GET```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   Description: Read item by book ID
+   
+   Request body: none
+   
+   Response status:
+   - ```200``` on success
+   - ```404``` if book ID not found
+  
+   Response body:
+   ```
+   {
+     "data": {
+       "id": n,
+       "title": "yourtitle",
+       "author": "yourauthor",
+       "published_at": "yourpublicationdate",
+       "created_at": "yourcreationdate",
+       "updated_at": "yourmodificationdate"
+     }
+   }
+    ```  
+  
+2. Method: ```PUT```  
+  
+   Description: Update item by book ID  
+  
+   Request body:
+   ```
+   {
+     "field1": "updatedvalue1",
+     "field2": "updatedvalue2",
+     ...
+   }
+   ```
+   note: may contain any number of fields from \[title, author, published_at\]  
+  
+   Response status:
+   - ```200``` on success
+   - ```404``` if book ID not found
+   - ```400``` if JSON invalid
+  
+   Response body:
+   ```
+   {
+     "message": "Book updated successfully",
+     "data": {
+       "id": n,
+       "title": "yourtitle",
+       "author": "yourauthor",
+       "published_at": "yourpublicationdate",
+       "created_at": "yourcreationdate",
+       "updated_at": "yourmodificationdate"
+     }
+   }
+    ```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Method: ```DELETE```  
+  
+   Description: Delete item by book ID
+  
+   Request body: none
+  
+   Response status:
+   - ```200``` on success
+   - ```404``` if book ID not found
+  
+   Response body:
+   ```
+   {
+     "message": "Book deleted successfully"
+   }
+    ```  
