@@ -2,15 +2,15 @@
 
 This web app is available at [papyruspub.vercel.app](https://papyruspub.vercel.app)
 
-This project is mainly directed to accomplish a REST API implementation as required in the GDGOC UGM hacker study case, Back-End role, but I have also included some Front-End stuffs to assist people who may not have tools like vercel test the API directly on the web.
+This project is mainly directed to accomplish a REST API implementation as required in the GDGOC UGM hacker study case, Back-End role, but I have also included some Front-End stuffs to assist people who may not have tools like postman test the API directly on the web.
  
 ## Endpoints
 
 - ### ```api/books```
 
-1. method: ```GET```  
+1. Method: ```GET```  
   
-   description: Read all items
+   Description: Read all items
   
    Request body: none
 
@@ -22,7 +22,7 @@ This project is mainly directed to accomplish a REST API implementation as requi
    {
      "data": [
        {
-         "id": X
+         "id": n,
          "title": "yourtitle",
          "author": "yourauthor",
          "published_at": "yourpublicationdate",
@@ -33,9 +33,9 @@ This project is mainly directed to accomplish a REST API implementation as requi
    }
     ```  
   
-2. method: ```POST```
+2. Method: ```POST```
 
-   description: Create a new item
+   Description: Create a new item
    
    Request body:
    ```
@@ -55,7 +55,7 @@ This project is mainly directed to accomplish a REST API implementation as requi
    {
      "message": "Book created successfully",
      "data": {
-       "id": X
+       "id": n,
        "title": "yourtitle",
        "author": "yourauthor",
        "published_at": "yourpublicationdate",
@@ -68,9 +68,9 @@ This project is mainly directed to accomplish a REST API implementation as requi
    
 -   ###  ```api/books/[book_id]```
 
-1. method: ```GET```
+1. Method: ```GET```
 
-   description: Read item by book ID
+   Description: Read item by book ID
    
    Request body: none
    
@@ -82,7 +82,7 @@ This project is mainly directed to accomplish a REST API implementation as requi
    ```
    {
      "data": {
-       "id": X
+       "id": n,
        "title": "yourtitle",
        "author": "yourauthor",
        "published_at": "yourpublicationdate",
@@ -92,14 +92,16 @@ This project is mainly directed to accomplish a REST API implementation as requi
    }
     ```  
   
-2. method: ```PUT```  
+2. Method: ```PUT```  
   
-   description: Update item by book ID  
+   Description: Update item by book ID  
   
    Request body:
    ```
    {
-     "field": "updatedvalue"
+     "field1": "updatedvalue1",
+     "field2": "updatedvalue2",
+     ...
    }
    ```
    note: may contain any number of fields from \[title, author, published_at\]  
@@ -108,12 +110,13 @@ This project is mainly directed to accomplish a REST API implementation as requi
    - ```200``` on success
    - ```404``` if book ID not found
    - ```400``` if JSON invalid
+  
    Response body:
    ```
    {
      "message": "Book updated successfully",
      "data": {
-       "id": X
+       "id": n,
        "title": "yourtitle",
        "author": "yourauthor",
        "published_at": "yourpublicationdate",
@@ -123,9 +126,9 @@ This project is mainly directed to accomplish a REST API implementation as requi
    }
     ```
 
-3. method: ```DELETE```  
+3. Method: ```DELETE```  
   
-   description: Delete item by book ID
+   Description: Delete item by book ID
   
    Request body: none
   
@@ -136,6 +139,6 @@ This project is mainly directed to accomplish a REST API implementation as requi
    Response body:
    ```
    {
-     "message": "Book deleted successfully",
+     "message": "Book deleted successfully"
    }
     ```  
